@@ -1,0 +1,575 @@
+
+/* ==========================================
+   PLACEMENTPRO AI - STUDENT PREDICTION
+   Brown + Cream Theme
+========================================== */
+
+.prediction-page {
+  min-height: 100vh;
+  padding: 45px 24px 30px;
+  background: linear-gradient(135deg, #faf7f2, #f0e7dc);
+  color: #49372c;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.prediction-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* PAGE HEADING */
+
+.prediction-heading {
+  margin-bottom: 30px;
+}
+
+.prediction-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 8px 13px;
+  background: #f4e9dc;
+  border: 1px solid #e3d0bc;
+  border-radius: 30px;
+  color: #805735;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.prediction-eyebrow span {
+  font-size: 15px;
+}
+
+.prediction-heading h1 {
+  margin: 0 0 14px;
+  color: #5c4033;
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+}
+
+.prediction-heading > p {
+  max-width: 720px;
+  margin: 0;
+  color: #79685b;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* STUDENT SELECTION CARD */
+
+.prediction-card {
+  position: relative;
+  padding: 32px;
+  overflow: hidden;
+  background: #fffdfb;
+  border: 1px solid #e5d8ca;
+  border-top: 4px solid #8b5e3c;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(92, 64, 51, 0.08);
+}
+
+.prediction-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #f3e5d4, #e7d1ba);
+  border: 1px solid #e0c7ad;
+  border-radius: 19px;
+  font-size: 32px;
+}
+
+.prediction-card-title h2 {
+  margin: 0 0 9px;
+  color: #5c4033;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.prediction-card-title p {
+  margin: 0 0 26px;
+  color: #827164;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* STUDENT FORM */
+
+.prediction-form {
+  margin-top: 25px;
+}
+
+.prediction-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #5c4033;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.prediction-select {
+  display: block;
+  width: 100%;
+  min-height: 54px;
+  padding: 13px 15px;
+  background: #fcfaf7;
+  border: 1px solid #d9c7b5;
+  border-radius: 11px;
+  color: #49372c;
+  font-family: inherit;
+  font-size: 15px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.prediction-select:focus {
+  border-color: #8b5e3c;
+  box-shadow: 0 0 0 4px rgba(139, 94, 60, 0.12);
+}
+
+.prediction-select option {
+  background: #fffdfb;
+  color: #49372c;
+}
+
+.prediction-help {
+  margin: 9px 0 0;
+  color: #9a8879;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* BROWN PREDICTION BUTTON */
+
+.prediction-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 55px;
+  margin-top: 23px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #8b5e3c, #5c4033);
+  border: 1px solid #8b5e3c;
+  border-radius: 12px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(92, 64, 51, 0.16);
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+}
+
+.prediction-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #70482f, #422d24);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(92, 64, 51, 0.22);
+}
+
+.prediction-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.prediction-button-arrow {
+  margin-left: auto;
+  font-size: 21px;
+}
+
+/* LOADING SPINNER */
+
+.prediction-spinner {
+  width: 17px;
+  height: 17px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: prediction-spin 0.7s linear infinite;
+}
+
+@keyframes prediction-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ERROR MESSAGE */
+
+.prediction-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  background: #fff4ed;
+  border: 1px solid #edcbb7;
+  border-radius: 10px;
+  color: #8a4b2c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* RESULTS SECTION */
+
+.prediction-result {
+  margin-top: 28px;
+  padding: 30px;
+  background: #fffdfb;
+  border: 1px solid #e5d8ca;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(92, 64, 51, 0.07);
+}
+
+.result-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.result-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  background: #f0e4d5;
+  border-radius: 15px;
+  font-size: 26px;
+}
+
+.result-heading h2 {
+  margin: 0 0 5px;
+  color: #5c4033;
+  font-size: 23px;
+}
+
+.result-heading p {
+  margin: 0;
+  color: #8a7869;
+  font-size: 13px;
+}
+
+/* PREDICTED SCORE */
+
+.prediction-score-card {
+  padding: 27px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #f7eee3, #efe0ce);
+  border: 1px solid #e2cdb5;
+  border-radius: 17px;
+}
+
+.score-caption {
+  color: #805735;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.prediction-score {
+  margin: 12px 0;
+  color: #5c4033;
+  font-size: clamp(38px, 7vw, 55px);
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.prediction-score-card p {
+  margin: 0;
+  color: #806e5d;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* LINEAR REGRESSION GRAPH */
+
+.regression-chart-card {
+  margin-top: 24px;
+  padding: 25px;
+  background: #fffdfb;
+  border: 1px solid #e5d8ca;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(92, 64, 51, 0.05);
+}
+
+.regression-chart-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.regression-chart-heading h3 {
+  margin: 0 0 8px;
+  color: #5c4033;
+  font-size: 19px;
+}
+
+.regression-chart-heading p {
+  margin: 0;
+  color: #8a7869;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.regression-chart-tag {
+  flex-shrink: 0;
+  padding: 7px 10px;
+  background: #f0e4d5;
+  border: 1px solid #e1cdb8;
+  border-radius: 20px;
+  color: #795238;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+.regression-chart-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.regression-chart {
+  display: block;
+  width: 100%;
+  min-width: 420px;
+  height: auto;
+  overflow: visible;
+}
+
+.regression-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-top: 12px;
+  padding-top: 17px;
+  border-top: 1px solid #eee5db;
+}
+
+.regression-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #79685b;
+  font-size: 12px;
+}
+
+.legend-dot,
+.legend-predicted {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-dot {
+  background: #8b5e3c;
+}
+
+.legend-predicted {
+  background: #5c4033;
+  box-shadow: 0 0 0 3px #ead8c4;
+}
+
+.legend-line {
+  display: inline-block;
+  width: 22px;
+  border-top: 3px dashed #b89575;
+}
+
+.regression-chart-note {
+  margin: 17px 0 0;
+  color: #9a8879;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* PERFORMANCE STATISTICS */
+
+.prediction-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 24px;
+}
+
+.prediction-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  min-width: 0;
+  padding: 17px 13px;
+  background: #fcf8f3;
+  border: 1px solid #e9ded1;
+  border-radius: 13px;
+}
+
+.stat-icon {
+  font-size: 21px;
+}
+
+.prediction-stat > div {
+  min-width: 0;
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #907d6b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.prediction-stat strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #5c4033;
+  font-size: 14px;
+}
+
+/* PREVIOUS TEST SCORES */
+
+.previous-scores {
+  margin-top: 28px;
+}
+
+.previous-scores h3 {
+  margin: 0 0 18px;
+  color: #5c4033;
+  font-size: 19px;
+}
+
+.score-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.score-row {
+  display: grid;
+  grid-template-columns: 75px minmax(0, 1fr) 52px;
+  align-items: center;
+  gap: 12px;
+}
+
+.score-test-name {
+  color: #79685b;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.score-track {
+  height: 9px;
+  overflow: hidden;
+  background: #eee5da;
+  border-radius: 20px;
+}
+
+.score-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #b89575, #795238);
+  border-radius: 20px;
+  transition: width 0.5s ease;
+}
+
+.score-value {
+  color: #5c4033;
+  font-size: 13px;
+  text-align: right;
+}
+
+/* NOTICES */
+
+.prediction-disclaimer,
+.prediction-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 16px;
+  background: #f8f2e9;
+  border: 1px solid #e9dac8;
+  border-radius: 12px;
+}
+
+.prediction-disclaimer p,
+.prediction-notice p {
+  margin: 0;
+  color: #79685b;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.prediction-notice {
+  margin-top: 0;
+}
+
+/* FOOTER */
+
+.prediction-footer {
+  padding: 28px 10px 5px;
+  color: #9a8879;
+  text-align: center;
+  font-size: 12px;
+}
+
+.prediction-footer span {
+  color: #8b5e3c;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 650px) {
+  .prediction-page {
+    padding: 28px 15px;
+  }
+
+  .prediction-card,
+  .prediction-result {
+    padding: 23px 18px;
+    border-radius: 17px;
+  }
+
+  .prediction-card-title h2,
+  .result-heading h2 {
+    font-size: 20px;
+  }
+
+  .prediction-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-stat {
+    align-items: center;
+  }
+
+  .regression-chart-card {
+    padding: 18px 12px;
+  }
+
+  .regression-chart-heading {
+    flex-direction: column;
+  }
+
+  .regression-chart-tag {
+    align-self: flex-start;
+  }
+
+  .score-row {
+    grid-template-columns: 58px minmax(0, 1fr) 45px;
+    gap: 9px;
+  }
+}

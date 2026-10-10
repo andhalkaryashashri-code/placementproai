@@ -1,0 +1,114 @@
+.portal-section {
+  padding: 80px 8%;
+  background: linear-gradient(135deg, #F8F3EC, #F2E5D5, #E7D2BE);
+}
+
+.portal-heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.portal-heading h2 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #3E2C23;
+}
+
+.portal-heading p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #6F5A4A;
+}
+
+.portal-container {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.portal-card {
+  width: 340px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(15px);
+  border-radius: 22px;
+  padding: 35px 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(139, 94, 60, 0.15);
+  box-shadow: 0 15px 35px rgba(111, 78, 55, 0.12);
+}
+
+.portal-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 45px rgba(111, 78, 55, 0.25);
+}
+
+.portal-icon {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.portal-icon.student {
+  background: linear-gradient(135deg, #8B5E3C, #6F4E37);
+}
+
+.portal-icon.teacher {
+  background: linear-gradient(135deg, #B07D52, #8B5E3C);
+}
+
+.portal-card h3 {
+  font-size: 1.6rem;
+  color: #3E2C23;
+  margin-bottom: 15px;
+}
+
+.portal-card p {
+  color: #6F5A4A;
+  line-height: 1.7;
+  min-height: 80px;
+}
+
+.portal-card button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8B5E3C, #6F4E37);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.portal-card button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #6F4E37, #5A3E2B);
+  box-shadow: 0 10px 25px rgba(111, 78, 55, 0.35);
+}
+
+@media (max-width: 768px) {
+  .portal-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portal-card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .portal-heading h2 {
+    font-size: 2rem;
+  }
+}

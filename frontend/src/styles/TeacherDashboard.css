@@ -1,0 +1,482 @@
+
+/* ========================================
+   TEACHER DASHBOARD
+======================================== */
+
+.teacher-dashboard {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #f8f4ed, #f1f5fb);
+  color: #263449;
+  font-family: "Segoe UI", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.teacher-dashboard * {
+  box-sizing: border-box;
+}
+
+.teacher-dashboard h1 {
+  margin: 0 0 10px;
+  color: #5c4033;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.teacher-dashboard > p {
+  margin: 0 0 30px;
+  color: #718096;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   PROFILE AND GENERAL DASHBOARD CARDS
+======================================== */
+
+.teacher-profile,
+.profile-card,
+.analytics-card,
+.dashboard-card {
+  background: #ffffff;
+  border: 1px solid #e9e3d9;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 24px rgba(60, 48, 35, 0.06);
+}
+
+.teacher-dashboard h2 {
+  color: #5c4033;
+  font-size: 23px;
+  margin: 0 0 20px;
+}
+
+.teacher-dashboard h3 {
+  color: #344256;
+}
+
+.teacher-dashboard p {
+  line-height: 1.7;
+}
+
+.teacher-profile p,
+.profile-card p {
+  margin: 10px 0;
+  color: #596579;
+}
+
+/* ========================================
+   QUICK ACTIONS
+======================================== */
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  align-items: stretch;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+
+.action-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 190px;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #e7dfd4;
+  border-left: 5px solid #9b7653;
+  border-radius: 18px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 8px 22px rgba(60, 48, 35, 0.05);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.action-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(60, 48, 35, 0.12);
+  border-left-color: #2563eb;
+}
+
+.action-card h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  color: #5c4033;
+}
+
+.action-card p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   AI PERFORMANCE PREDICTION CARD
+======================================== */
+
+.ai-prediction-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  min-height: 255px;
+  padding: 27px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 95% 5%,
+      rgba(96, 165, 250, 0.22),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #ffffff 0%, #f1f6ff 100%);
+
+  border: 1px solid #cbdcf8;
+  border-radius: 22px;
+  text-decoration: none;
+  color: #24344d;
+
+  box-shadow: 0 10px 28px rgba(37, 99, 235, 0.09);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Blue highlight on the left */
+
+.ai-prediction-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #60a5fa, #1d4ed8);
+  transition: width 0.3s ease;
+}
+
+/* Soft decorative circle */
+
+.ai-prediction-card::after {
+  content: "";
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  right: -55px;
+  bottom: -65px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.09);
+  pointer-events: none;
+}
+
+.ai-prediction-card:hover {
+  transform: translateY(-7px);
+  border-color: #75a7f7;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.17);
+}
+
+.ai-prediction-card:hover::before {
+  width: 8px;
+}
+
+/* Top row */
+
+.ai-prediction-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Brain icon */
+
+.ai-prediction-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65px;
+  height: 65px;
+  flex-shrink: 0;
+
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border: 1px solid #bfdbfe;
+  border-radius: 19px;
+
+  font-size: 34px;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.1);
+
+  transition: transform 0.3s ease;
+}
+
+.ai-prediction-card:hover .ai-prediction-icon {
+  transform: rotate(-5deg) scale(1.06);
+}
+
+/* AI badge */
+
+.ai-prediction-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 7px 11px;
+  border-radius: 30px;
+
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Main content */
+
+.ai-prediction-content {
+  position: relative;
+  z-index: 1;
+}
+
+.ai-prediction-content h3 {
+  margin: 0 0 12px;
+  color: #173b75;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.ai-prediction-content p {
+  margin: 0;
+  color: #63738b;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Bottom action */
+
+.ai-prediction-footer {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding-top: 15px;
+  border-top: 1px solid #dce7f8;
+
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.ai-prediction-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 21px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.ai-prediction-card:hover .ai-prediction-arrow {
+  transform: translateX(4px);
+  background: #1746b0;
+}
+
+/* ========================================
+   DASHBOARD GRID
+======================================== */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.dashboard-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(60, 48, 35, 0.1);
+}
+
+.dashboard-card button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #8b5e3c;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.dashboard-card button:hover {
+  background: #68442b;
+}
+
+/* ========================================
+   ANALYTICS
+======================================== */
+
+.analytics-card {
+  border-left: 5px solid #8b5e3c;
+}
+
+.analytics-card h3 {
+  margin-top: 0;
+  color: #5c4033;
+}
+
+/* ========================================
+   CHATBOT
+======================================== */
+
+.ai-bot {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #dce5f2;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(20, 35, 60, 0.18);
+  z-index: 1000;
+}
+
+.bot-header {
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  color: #ffffff;
+  font-weight: 750;
+}
+
+.bot-body {
+  padding: 18px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+  .teacher-dashboard {
+    padding: 25px 18px;
+  }
+
+  .teacher-dashboard h1 {
+    font-size: 29px;
+  }
+
+  .quick-actions,
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-prediction-card {
+    min-height: 235px;
+    padding: 23px;
+  }
+
+  .ai-prediction-content h3 {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 400px) {
+  .teacher-dashboard {
+    padding: 20px 12px;
+  }
+
+  .ai-prediction-card {
+    padding: 20px;
+  }
+
+  .ai-prediction-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 29px;
+  }
+
+  .ai-prediction-badge {
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+}
+
+/* AI Performance Prediction - Brown Theme */
+
+a.teacher-ai-prediction-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+
+  padding: 16px 24px !important;
+  margin: 15px 0 !important;
+
+  background: linear-gradient(135deg, #8b5e3c, #5c4033) !important;
+  color: #ffffff !important;
+
+  border: 1px solid #b89575 !important;
+  border-radius: 14px !important;
+
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+
+  box-shadow: 0 6px 18px rgba(92, 64, 51, 0.2) !important;
+  cursor: pointer;
+  transition: all 0.25s ease !important;
+}
+
+a.teacher-ai-prediction-button:hover {
+  background: linear-gradient(135deg, #6f4931, #422d24) !important;
+  color: #ffffff !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 25px rgba(92, 64, 51, 0.3) !important;
+}
+
+.teacher-ai-icon {
+  font-size: 25px;
+}
+
+.teacher-ai-arrow {
+  font-size: 23px;
+  transition: transform 0.25s ease;
+}
+
+a.teacher-ai-prediction-button:hover .teacher-ai-arrow {
+  transform: translateX(5px);
+}

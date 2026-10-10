@@ -1,0 +1,45 @@
+
+# Never upload environment secrets
+.env
+.env.*
+**/.env
+**/.env.*
+
+# ZIP backups
+backend.zip
+frontend.zip
+
+# Never upload environment secrets
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Ignore Node.js dependencies
+node_modules/
+**/node_modules/
+
+# Ignore build files
+dist/
+**/dist/
+build/
+**/build/
+
+# ZIP backups
+backend.zip
+frontend.zip
+
+# Ignore logs
+*.log
+npm-debug.log*
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore Postman files that may contain secrets
+.postman/
+postman/
+
+# Ignore source ZIP backup
+frontend/src.zip
